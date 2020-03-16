@@ -63,9 +63,10 @@ router.delete("/deleteData", (req, res) => {
 });
 
 router.post("/setInitialData", (req, res) => {
+  console.log(req.query)
   let data = new Data();
   //Initial Data
-  data.time = "",
+  data.time = req.query.time,
   data.light = 0,
   data.temp = 0,
   data.humidity = 0,
